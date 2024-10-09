@@ -7,7 +7,12 @@ Suitability: Python post-processing algorithm for single particle / single cell 
 *After that, it can be chosen as default: File --> Preferences --> Default conda environment --> choose environment<br>
 *Now install the right JupiterLab Version (2.2.6) and 'Launch'<br>
 <br><br>
-<b>2) Use the reference material code (here Au) to get the transport efficiencies and/or interpret Au particle data: </b><br>
-*
+<b>2) Create Folders </b><br>
+*Create for each sample one folder --> Add ONE csv. file output and the code file (!IMPORTANT: Make sure only one .csv is in the same folder with the code file!) <br>
+*Open the code file with e.g. JupiterLab
+
+<b>3) Calculation of transport efficiencies </b><br>
+*Use the reference material code (Example Au) to calculate the transport efficiencies and/or interpret Au particle data <br>
+*Suggested to measure the reference materials for the transport efficiency
 
 
