@@ -10,7 +10,7 @@ Suitability: Python post-processing algorithm for single particle / single cell 
 <b>2) Create Folders and insert files:</b><br>
 *Create for each sample one folder --> Add ONE csv. file output and the code file (!IMPORTANT: Make sure only one .csv is in the same folder with the code file!) <br>
 *Open the code file with e.g. JupiterLab
-<br>
+<br><br>
 <b>3) Calculation of transport efficiencies</b><br>
 *Use the reference material code (Example Au) to calculate the transport efficiencies (TE) and/or interpret Au particle data <br>
 *Suggested to measure three reference material technical replicates for the transport efficiency and take the average of the TE results <br>
