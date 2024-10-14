@@ -23,3 +23,6 @@ Suitability: Python post-processing algorithm for single particle / single cell 
 *The Particle Number Concentration (PNC) shown here is calculated from all events above PDT.
 
 
+Authors Note: The Readme will be completed as soon as possible!
+
+
