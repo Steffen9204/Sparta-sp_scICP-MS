@@ -1,5 +1,5 @@
 # Python-algorithm-sp/scICP-MS
-<u>Suitability</u>: Python post-processing algorithm for single particle / single cell ICP-MS (quadrupole based) suitable for <b>Thermo and Agilent.</b>
+<b>Suitability</b>: Python post-processing algorithm for single particle / single cell ICP-MS (quadrupole based) suitable for <b>Thermo and Agilent.</b>
 
 ## 1)  General Information <br>
 *The Python algorithm is created using Anaconda Navigator (2.6.0) and JupiterLab (2.2.6). We suggest to download this software. Otherwise a python script is also available (.py) but is not tested from our site.<br>
