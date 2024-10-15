@@ -22,6 +22,8 @@
 *<b>'te'</b> (transport efficiency) here can be for now <b>roughly estimated</b> (as absolute value; NOT as '%') and then <b>updated</b> after the result is there from e.g. three replicates in the code for analyte interpretation (and this code if aiming to investigate Au particles). <br>
 *<b>Run the whole code</b>. In case an <b>error</b> occurs, <b>adapt the user interaction fields</b> marked with '!!!'.<br>
 *To decide which <b>method</b> and <b>factor 'k'</b> should be chosen to estimate the transport efficiency, the <b>graphs</b> 'Plot all data and show PDT to choose the best PDT (Gaussian)' & '# Plot all data and show PDT to choose the best PDT (Poisson)' might help. Usually the <b>Gaussian method between µ+4-7SD is taken (!!!to estimate the transport efficiency!!!) in combination with the Particle number method</b> but might vary depending on your particle material used. <br>
+*If <b>dwell times < 2 ms</b> are used, a <b>peak integration</b> is applied for both methods to combine multiple detections within one particle event.
+*The ionic concentration, which is calculated assuming that all data below PDT are dissolved/ionic signals is calculated. The <b>mode of all data < PDT </b> and the slope & intercept lead to the final <b>ionic concentration (µg/L)</b>, which does NOT include the dilution factor, for each method. <br>
 *In the Notebooks <b>'Remove outliers [>µ+kSD from all particles] (high signals e.g. agglomerates) (Gaussian/Poisson)'</b> the <b>factor 'i'</b> might be <b>adapted</b> from default '3' to any higher number to become less sensitive and detect less outliers (in case your particles are detected as outliers, sometimes the case for high background elements (e.g. Si)' This can be monitored in the histogram graphs below. <br>
 *The <b>Particle Number Concentration (PNC)</b> shown here is calculated from <b>all events above PDT</b>. <br>
 *The below <b>histograms give an overview about background, particles (used for the following calculations) and outliers</b>; Adapt the above factor 'i' if you think that your particle populations are marked as outliers. <br>
@@ -43,14 +45,21 @@
 *<b>Tab: 'TE'</b>: !!! Only appears for the <b>reference material (e.g. Au)</b>!!!. <br>
 *<b>Tabs: 'Raw_Gaussian/Poisson'</b>: show the final <b>particle raw data above PDT</b> for each method.
 *<b>Tabs: 'Number_conc_Gaussian/Poisson'</b>: represent the <b>particle number concentration (including dilution factor) above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
-*<b>Tabs: 'Masses_Gaussian/Poisson'</b>: represent all <b>particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
-*<b>Tabs: 'Masses_Gaussian/Poisson_Peaks'</b>: represent extracted <b>particle masses above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
-
+<br>
+*<b>Tabs: 'Masses_Gaussian/Poisson'</b>: represent <b>all particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
+*<b>Tabs: 'Masses_Gaussian/Poisson_Peaks'</b>: represent <b>extracted particle masses above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
+*<b>Tabs: 'Masses_Summary_Gaussian/Poisson'</b>: show a <b>mean/average, median, SD, Mode of all particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <b>Peak 0-3 give you the <b>Gaussian</b> (this has nothing to do with the Gaussian method to estimate the PDT!) <b>average +/- SD (k = 1); the number of particle events</b> considered for this and the <b>particle number concentration under each extracted peak</b> (including the dilution factor). <br>
+*<b>Tabs: 'Masses_LOD_Gaussian/Poisson'</b>: represent the <b>limit of detections for particle masses</b> for each method. <br>
+<br>
 *<b>Tabs: 'Sizes_Gaussian/Poisson'</b>: represent all <b>particle sizes above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
-
-
+*<b>Tabs: 'Sizes_Gaussian/Poisson_Peaks'</b>: represent <b>extracted particle sizes above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
+*<b>Tabs: 'Sizes_Summary_Gaussian/Poisson'</b>: show a <b>mean/average, median, SD, Mode of all particle sizes above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <b>Peak 0-3 give you the <b>Gaussian</b> (this has nothing to do with the Gaussian method to estimate the PDT!) <b>average +/- SD (k = 1); the number of particle events</b> considered for this and the <b>particle number concentration under each extracted peak</b> (including the dilution factor). <br>
+*<b>Tabs: 'Sizes_LOD_Gaussian/Poisson'</b>: represent the <b>limit of detections for particle sizes</b> for each method. <br>
+<br>
+*<b>Tabs: 'Mass_conc_Gaussian/Poisson'</b>: represent the <b>mass concentrations (mg/L)</b> calculated as sum for all masses as well as using the masse average multiplicated with the event number for each method. <br>
+*<b>Tabs: 'Ionic_conc_Gaussian/Poisson'</b>: represent the <b>ionic concentration</b> which is calculated assuming that all data below PDT are dissolved/ionic signals. The <b>mode of all data < PDT </b> and the slope & intercept lead to the final <b>ionic concentration (µg/L)</b>, which does NOT include the dilution factor, for each method. <br>
 
 <br>
-Authors Note: The Readme will be completed as soon as possible!
+<b>Authors Note:</b> We tried to explain how to operate our code as transparent and understandable as possible and hope that our 'ReadMe' helps you to use our Python algorithm. If there are questions please leave comments that we can modify our instructions. Thank you for your support!
 
 
