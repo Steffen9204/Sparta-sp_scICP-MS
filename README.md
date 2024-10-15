@@ -1,5 +1,6 @@
 # Python-algorithm-sp/scICP-MS
 <b>Suitability</b>: Python post-processing algorithm for single particle / single cell ICP-MS (<b>quadrupole based</b>) suitable for <b>Thermo and Agilent.</b>
+<b>Note:</b> The code might be also necessary for other ICP-MS data provided as .csv (e.g from Perkin Elmer/Analytik Jena) but the input notebook must be adjusted to the format provided.
 
 ## 1)  General Information
 *The Python algorithm is created using <b>Anaconda Navigator (2.6.0)</b> and JupiterLab (2.2.6). We suggest to download this software. Otherwise a python script is also available (.py) but is not tested from our site.<br>
@@ -26,6 +27,7 @@
 *The <b>transport (nebulisation) efficiency</b> is calculated via particle number and particle size method and saved in the final Excel output for all cases. As explained above, take the <b>most suiting method</b> for your materials and calculate an <b>average</b> of e.g. three replicates (always the same method). <br>
 
 ### 3.2) All other materials and elements (example SiO<sub>2</sub>)
+*Use the analyte code (example SiO<sub>2</sub>) to interpret your particle sample(s) in the folder 'Analytes (all other elements)/Example SiO2'. Choose either Agilent or Thermo (depending on your instrument used). <br>
 *All steps explained in '3.1' also apply here with the only difference that the final 'te' calculated should be filled in here (in the second notenbook with all the data). The following steps also apply for the reference materials (e.g. Au).<br>
 *Next, <b>masses, sizes and each limit of detection</b> are calculated and also stored in the Excel output. <br>
 *The <b>next interaction</b> might be nessesary in the <b>mass and size histograms (marked with '!!!').</b> <br>
