@@ -47,7 +47,7 @@
 *<b>Tabs: 'PDT_Gaussian/Posisson'</b>: show the <b>PDTs (and critical limits (LCs))</b> estimated as a second and <b>most important</b> estimate to choose the <b>most suitable method</b> for final data interpretation and for if the Gaussian method is chosen also factor 'k'. <br>
 *<b>Tab: 'TE'</b>: !!! Only appears for the <b>reference material (e.g. Au)</b>!!!. <br>
 *<b>Tabs: 'Raw_Gaussian/Poisson'</b>: show the final <b>particle raw data above PDT</b> for each method.
-*<b>Tabs: 'Number_conc_Gaussian/Poisson'</b>: represent the <b>particle number concentration (including dilution factor) above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
+*<b>Tabs: 'Number_conc_Gaussian/Poisson'</b>: represent the <b>particle number concentration [nanoparticle (NP)/mL)] (including dilution factor) above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
 <br>
 *<b>Tabs: 'Masses_Gaussian/Poisson'</b>: represent <b>all particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
 *<b>Tabs: 'Masses_Gaussian/Poisson_Peaks'</b>: represent <b>extracted particle masses above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
