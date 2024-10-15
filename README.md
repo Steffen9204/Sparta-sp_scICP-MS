@@ -23,16 +23,16 @@
 *In the Notebooks <b>'Remove outliers [>µ+kSD from all particles] (high signals e.g. agglomerates) (Gaussian/Poisson)'</b> the <b>factor 'i'</b> might be <b>adapted</b> from default '3' to any higher number to become less sensitive and detect less outliers (in case your particles are detected as outliers, sometimes the case for high background elements (e.g. Si)' This can be monitored in the histogram graphs below. <br>
 *The <b>Particle Number Concentration (PNC)</b> shown here is calculated from <b>all events above PDT</b>. <br>
 *The below <b>histograms give an overview about background, particles (used for the following calculations) and outliers</b>; Adapt the above factor 'i' if you think that your particle populations are marked as outliers. <br>
-*The <b>transport (nebulisation) efficiency is calculated via particle number and particle size method and saved in the final Excel output for all cases. As explained above, take the most suiting method for your materials and calculate an average of e.g. three replicates (always the same method). <br>
+*The <b>transport (nebulisation) efficiency</b> is calculated via particle number and particle size method and saved in the final Excel output for all cases. As explained above, take the <b>most suiting method</b> for your materials and calculate an <b>average</b> of e.g. three replicates (always the same method). <br>
 
 ### 3.2) All other materials and elements (example SiO<sub>2</sub>)
-*All steps explained in '3.1' also apply here with the only difference the the final 'te' calculated should be chosen here (in the second notenbook with all the data). <br>
-*Next, masses, sizes and each limit of detection are calculated and also stored in the Excel output. <br>
-*The next interaction might be nessesary in the mass and size histograms (marked with '!!!')
-*You can adapt the expected peak number (depending on homogeneous/heterogeneous particle distributions). Note: Sometimes (e.g. if there is leftover background to the left) a higher 'n' suits to a better fit. This has to be tested and can be monitored in the graph(s) below. As described in the Markups: line 19 "(max(h[1]))+"NUMBER"*(max(h[1]))(max(h[1]))+100*(max(h[1]))"; the 'Number' can be adapted to adjust the peak form and height (usually between 0.01 and 100). <br>
-*In case the peak fitting is chosen for e.g. heterogeneous materials or obvious background to the left, the events unter the peak can be extracted as well as their particle number concentration (save in the final Excel output file which is explained under '4.'). <br>
-*Next the mass concentrations (mg/L) are calculated using the sum of all events and the average times the number of events which is in some case slightly different. We recommend the use of the sum, as this represents all particle events detected. <br>
-* Finally, all data of interest are stored and exported alongside the output figures in an Excel file, which is created in the same folder as you run your code. <br>
+*All steps explained in '3.1' also apply here with the only difference that the final 'te' calculated should be filled in here (in the second notenbook with all the data). The following steps also apply for the reference materials (e.g. Au).<br>
+*Next, <b>masses, sizes and each limit of detection</b> are calculated and also stored in the Excel output. <br>
+*The <b>next interaction</b> might be nessesary in the <b>mass and size histograms (marked with '!!!').</b> <br>
+*You can adapt the <b>expected peak number</b> (depending on homogeneous/heterogeneous particle distributions). <b>Note:</b> Sometimes (e.g. if there is leftover background to the left) a higher 'n' suits to a better fit. This has to be tested and can be monitored in the graph(s) below. As described in the Markups: line 19 "(max(h[1]))+"NUMBER"*(max(h[1]))(max(h[1]))+100*(max(h[1]))"; the <b>'Number' can be adapted</b> to adjust the <b>peak form and height</b> (usually between 0.01 and 100). <br>
+*In case the <b>peak fitting is chosen</b> as final result (for e.g. heterogeneous materials or obvious background to the left), the <b>events unter the peak can be extracted</b> as well as their <b>particle number concentration</b> (save in the final Excel output file which is explained under <b>'4.'</b>). <br>
+*Next the <b>mass concentrations (mg/L)</b> are calculated using the sum of all events and the average times the number of events which is in some case slightly different. We <b>recommend</b> the use of the <b>sum</b>, as this represents all particle events detected. <br>
+* Finally, all <b>data of interest</b> are <b>stored and exported</b> alongside the output <b>figures</b> in an <b>Excel file (named with 'output')</b>, which is created in the same folder as you run your code. <br>
 
 
 <br>
