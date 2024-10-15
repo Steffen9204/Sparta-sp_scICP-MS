@@ -1590,7 +1590,7 @@ for i in sd_trials[0:1]:
 
 # ## Save data into Excel file
 
-# In[40]:
+# In[41]:
 
 
 # Change figure size
@@ -1797,7 +1797,7 @@ df = pd.concat(dataframes, axis=1) # Concatenate all DataFrames
 num_columns = df.shape[1]  # Get the number of columns in the concatenated DataFrame
 SD_columns=[3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7]
 columns = [
-    f"{new_name[0][:-2]}_Peak_{0 + i % 4}_µ+{SD_columns[i]}SD_spICP-MS_(nm)" 
+    f"{new_name[0][:-2]}_Peak_{0 + i % 4}_µ+{SD_columns[i]}SD_spICP-MS_(fg)" 
     for i in range(num_columns)
 ]
 df.columns = columns
@@ -1820,7 +1820,7 @@ df = pd.concat(dataframes, axis=1)
 # Generate column names based on the concatenated DataFrame
 num_columns = df.shape[1]  # Get the number of columns in the concatenated DataFrame
 columns = [
-    f"{new_name[0][:-2]}_Peak_{0 + i % 4}_Poisson_spICP-MS_(nm)"
+    f"{new_name[0][:-2]}_Peak_{0 + i % 4}_Poisson_spICP-MS_(fg)"
     for i in range(num_columns)
 ]
 df.columns = columns
@@ -2030,8 +2030,8 @@ C=pd.DataFrame([C[list(C.columns.values)[1]]]).T
 D=pd.DataFrame([D[list(D.columns.values)[1]]]).T
 E=pd.DataFrame([E[list(E.columns.values)[1]]]).T
 
-columns = ['Parameter', new_name[0][:-2]+'_µ+3SD_spICP-MS_(fg)',new_name[0][:-2]+'_µ+4SD_spICP-MS_(fg)',new_name[0][:-2]+'_µ+5SD_spICP-MS_(fg)',
-           new_name[0][:-2]+'_µ+6SD_spICP-MS_(fg)',new_name[0][:-2]+'_µ+7SD_spICP-MS_(fg)']
+columns = ['Parameter', new_name[0][:-2]+'_µ+3SD_spICP-MS_(nm)',new_name[0][:-2]+'_µ+4SD_spICP-MS_(nm)',new_name[0][:-2]+'_µ+5SD_spICP-MS_(nm)',
+           new_name[0][:-2]+'_µ+6SD_spICP-MS_(nm)',new_name[0][:-2]+'_µ+7SD_spICP-MS_(nm)']
 df = pd.concat([Index,A,B,C,D,E], axis=1)
 df.columns = columns
 df.to_excel(writer, sheet_name="Sizes_Summary_Gaussian", index=False)
@@ -2050,7 +2050,7 @@ AAA = pd.DataFrame([masses_sizes_list_excel_poisson[0][2]]).T
 A = pd.concat([AAA,AA], axis=0).reset_index()
 A=pd.DataFrame([A[list(A.columns.values)[1]]]).T
 
-columns = ['Parameter', new_name[0][:-2]+'_Poisson_spICP-MS_(fg)']
+columns = ['Parameter', new_name[0][:-2]+'_Poisson_spICP-MS_(nm)']
 df = pd.concat([Index,A], axis=1)
 df.columns = columns
 df.to_excel(writer, sheet_name="Sizes_Summary_Poisson", index=False)
@@ -2156,4 +2156,10 @@ for column in df: # Set Tab Colour
     writer.sheets['Ionic_conc_Poisson'].set_column(col_idx, col_idx, column_length)
     
 writer.close()
+
+
+# In[ ]:
+
+
+
 
