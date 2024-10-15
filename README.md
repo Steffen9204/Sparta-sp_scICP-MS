@@ -1,6 +1,6 @@
 # Python-algorithm-sp/scICP-MS
 <b>Suitability</b>: Python post-processing algorithm for single particle / single cell ICP-MS (<b>quadrupole based</b>) suitable for <b>Thermo and Agilent.</b>
-<b>Note:</b> The code might be also necessary for other ICP-MS data provided as .csv (e.g from Perkin Elmer/Analytik Jena) but the input notebook must be adjusted to the format provided.
+<b>Note:</b> The code might be also <b>suitable</b> for <b>other ICP-MS manufacturers</b> if the output is provided as .csv (e.g from Perkin Elmer/Analytik Jena) but the input notebook must be adjusted to the format needed.
 
 ## 1)  General Information
 *The Python algorithm is created using <b>Anaconda Navigator (2.6.0)</b> and JupiterLab (2.2.6). We suggest to download this software. Otherwise a python script is also available (.py) but is not tested from our site.<br>
