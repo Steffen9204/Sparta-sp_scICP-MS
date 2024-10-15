@@ -2,6 +2,8 @@
 <b>Suitability</b>: Python post-processing algorithm for single particle / single cell ICP-MS (<b>quadrupole based</b>) suitable for <b>Thermo and Agilent.</b>
 <b>Note:</b> The code might be also <b>suitable</b> for <b>other ICP-MS manufacturers</b> if the output is provided as .csv (e.g from Perkin Elmer/Analytik Jena) but the input notebook must be adjusted to the format needed.
 
+<b>Authors Note:</b> We tried to explain how to operate our code as transparent and understandable as possible and hope that our 'ReadMe' helps you to use our Python algorithm. If there are questions please leave comments that we can modify our instructions. Thank you for your support!
+
 ## 1)  General Information
 *The Python algorithm is created using <b>Anaconda Navigator (2.6.0)</b> and JupiterLab (2.2.6). We suggest to download this software. Otherwise a python script is also available (.py) but is not tested from our site.<br>
 *The <b>anaconda environment</b> is provided in the main path <b>('2024_10_base_clone.yaml')</b> and can be integrated in anaconda navigator: Environments --> Import --> Choose File<br>
@@ -21,6 +23,7 @@
 *The <b>intercept and slope (response)</b> is usually taken from a <b>linear ionic calibration</b> (e.g. done with Microsoft Excel or Origin Lab etc.). <br>
 *<b>'te'</b> (transport efficiency) here can be for now <b>roughly estimated</b> (as absolute value; NOT as '%') and then <b>updated</b> after the result is there from e.g. three replicates in the code for analyte interpretation (and this code if aiming to investigate Au particles). <br>
 *<b>Run the whole code</b>. In case an <b>error</b> occurs, <b>adapt the user interaction fields</b> marked with '!!!'.<br>
+*<b>Note:</b> It might be necessary to <b>convert your .csv files to the UTF-8 format</b>, if an error is occuring in the code!
 *To decide which <b>method</b> and <b>factor 'k'</b> should be chosen to estimate the transport efficiency, the <b>graphs</b> 'Plot all data and show PDT to choose the best PDT (Gaussian)' & '# Plot all data and show PDT to choose the best PDT (Poisson)' might help. Usually the <b>Gaussian method between µ+4-7SD is taken (!!!to estimate the transport efficiency!!!) in combination with the Particle number method</b> but might vary depending on your particle material used. <br>
 *If <b>dwell times < 2 ms</b> are used, a <b>peak integration</b> is applied for both methods to combine multiple detections within one particle event.
 *The ionic concentration, which is calculated assuming that all data below PDT are dissolved/ionic signals is calculated. The <b>mode of all data < PDT </b> and the slope & intercept lead to the final <b>ionic concentration (µg/L)</b>, which does NOT include the dilution factor, for each method. <br>
@@ -58,8 +61,3 @@
 <br>
 *<b>Tabs: 'Mass_conc_Gaussian/Poisson'</b>: represent the <b>mass concentrations (mg/L)</b> calculated as sum for all masses as well as using the masse average multiplicated with the event number for each method. <br>
 *<b>Tabs: 'Ionic_conc_Gaussian/Poisson'</b>: represent the <b>ionic concentration</b> which is calculated assuming that all data below PDT are dissolved/ionic signals. The <b>mode of all data < PDT </b> and the slope & intercept lead to the final <b>ionic concentration (µg/L)</b>, which does NOT include the dilution factor, for each method. <br>
-
-<br>
-<b>Authors Note:</b> We tried to explain how to operate our code as transparent and understandable as possible and hope that our 'ReadMe' helps you to use our Python algorithm. If there are questions please leave comments that we can modify our instructions. Thank you for your support!
-
-
