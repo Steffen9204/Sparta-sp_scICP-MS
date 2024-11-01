@@ -48,16 +48,13 @@
 * <b>Tab: 'TE'</b>: !!! Only appears for the <b>reference material (e.g. Au)</b>!!!. <br>
 * <b>Tabs: 'Raw_Gaussian/Poisson'</b>: show the final <b>particle raw data above PDT</b> for each method.
 * <b>Tabs: 'Number_conc_Gaussian/Poisson'</b>: represent the <b>particle number concentration [nanoparticle (NP)/mL)] (including dilution factor) above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
-<br>
 * <b>Tabs: 'Masses_Gaussian/Poisson'</b>: represent <b>all particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
 * <b>Tabs: 'Masses_Gaussian/Poisson_Peaks'</b>: represent <b>extracted particle masses above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
 * <b>Tabs: 'Masses_Summary_Gaussian/Poisson'</b>: show a <b>mean/average, median, SD, Mode of all particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. Peak 0-3 give you the <b>Gaussian peak-fitting</b> (this has nothing to do with the Gaussian method to estimate the PDT!) <b>average +/- SD (k = 1); the number of particle events</b> considered for this and the <b>particle number concentration under each extracted peak</b> (including the dilution factor). <br>
 * <b>Tabs: 'Masses_LOD_Gaussian/Poisson'</b>: represent the <b>limit of detections for particle masses</b> for each method. <br>
-<br>
 * <b>Tabs: 'Sizes_Gaussian/Poisson'</b>: represent all <b>particle sizes above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
 * <b>Tabs: 'Sizes_Gaussian/Poisson_Peaks'</b>: represent <b>extracted particle sizes above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
 * <b>Tabs: 'Sizes_Summary_Gaussian/Poisson'</b>: show a <b>mean/average, median, SD, Mode of all particle sizes above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. Peak 0-3 give you the <b>Gaussian peak-fitting</b> (this has nothing to do with the Gaussian method to estimate the PDT!) <b>average +/- SD (k = 1); the number of particle events</b> considered for this and the <b>particle number concentration under each extracted peak</b> (including the dilution factor). <br>
 * <b>Tabs: 'Sizes_LOD_Gaussian/Poisson'</b>: represent the <b>limit of detections for particle sizes</b> for each method. <br>
-<br>
 * <b>Tabs: 'Mass_conc_Gaussian/Poisson'</b>: represent the <b>mass concentrations (mg/L)</b> calculated as sum for all masses as well as using the masse average multiplicated with the event number for each method. <br>
 * <b>Tabs: 'Ionic_conc_Gaussian/Poisson'</b>: represent the <b>ionic concentration</b> which is calculated assuming that all data below PDT are dissolved/ionic signals. The <b>mode of all data < PDT </b> and the slope & intercept lead to the final <b>ionic concentration (µg/L)</b>, which does NOT include the dilution factor, for each method. <br>
