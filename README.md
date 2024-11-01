@@ -5,14 +5,14 @@
 <b>Authors Note:</b> We tried to explain how to operate our code as transparent and understandable as possible and hope that our 'ReadMe' helps you to use our Python algorithm. If there are questions please leave comments that we can modify our instructions. Thank you for your support!
 
 ## 1)  General Information
-*The Python algorithm is created using <b>Anaconda Navigator (2.6.0)</b> and JupiterLab (2.2.6). We suggest to download this software. Otherwise a python script is also available (.py) but is not tested from our site.<br>
-*The <b>anaconda environment</b> is provided in the main path <b>('2024_10_base_clone.yaml')</b> and can be integrated in anaconda navigator: Environments --> Import --> Choose File<br>
-*After that, it can be chosen as default: File --> Preferences --> Default conda environment --> choose environment. <br>
-*Now install the right <b>JupiterLab Version (2.2.6)</b> and 'Launch'.<br>
+* The Python algorithm is created using <b>Anaconda Navigator (2.6.0)</b> and JupiterLab (2.2.6). We suggest to download this software. Otherwise a python script is also available (.py) but is not tested from our site.<br>
+* The <b>anaconda environment</b> is provided in the main path <b>('2024_10_base_clone.yaml')</b> and can be integrated in anaconda navigator: Environments --> Import --> Choose File<br>
+* After that, it can be chosen as default: File --> Preferences --> Default conda environment --> choose environment. <br>
+* Now install the right <b>JupiterLab Version (2.2.6)</b> and 'Launch'.<br>
 
 ## 2) Create Folders and insert files
-*Create for each sample one folder --> Add <b>ONE csv. file (raw data of the measurement) </b> and the <b>code file </b> (!IMPORTANT: Make sure only one .csv is in the same folder with the code file!). <br>
-*<b>Open the code</b> file with e.g. JupiterLab.
+* Create for each sample one folder --> Add <b>ONE csv. file (raw data of the measurement) </b> and the <b>code file </b> (!IMPORTANT: Make sure only one .csv is in the same folder with the code file!). <br>
+* <b>Open the code</b> file with e.g. JupiterLab.
 
 ## 3) Operate the code (e.g. calculation of transport efficiencies)
 
@@ -39,25 +39,25 @@
 * Finally, all <b>data of interest</b> are <b>stored and exported</b> alongside the output <b>figures</b> in an <b>Excel file (named with 'output')</b>, which is created in the same folder as you run your code. <br>
 
 ### 3.2) All other materials and elements (example SiO<sub>2</sub>)
-*Use the <b>analyte code (example SiO<sub>2</sub>)</b> to interpret your <b>particle sample(s)</b> in the folder 'Analytes (all other elements)/Example SiO2'. Choose either Agilent or Thermo (depending on your instrument used). <br>
-*<b>All steps explained in '3.1'</b> also apply here with the only difference that the <b>final 'te' calculated</b> should be <b>filled in</b> here (in the second notenbook with all the data). The following steps also apply for the reference materials (e.g. Au).<br>
+* Use the <b>analyte code (example SiO<sub>2</sub>)</b> to interpret your <b>particle sample(s)</b> in the folder 'Analytes (all other elements)/Example SiO2'. Choose either Agilent or Thermo (depending on your instrument used). <br>
+* <b>All steps explained in '3.1'</b> also apply here with the only difference that the <b>final 'te' calculated</b> should be <b>filled in</b> here (in the second notenbook with all the data). The following steps also apply for the reference materials (e.g. Au).<br>
 
 ## 4) Excel output file
-*<b>Tab: 'Baseline correction'</b>: In case of a <b>baseline drift</b> the baseline may have been corrected. The <b>ionic mode estimation (background)</b> gives you a <b>first estimation</b> if the <b>Gaussian or Poisson method</b> should be <b>chosen</b> to estimate the <b>Particle Detection Threshold (PDT)</b>. Lockwood et al. 2020 (SPCal) suggested to use the Poisson method for <b>low background elements <= 5 counts otherwise</b> the <b>iterative Gaussian method</b> may be chosen (e.g. for dwell times of 0.1 ms --> 50,000 counts per seconds). <br>
-*<b>Tabs: 'PDT_Gaussian/Posisson'</b>: show the <b>PDTs (and critical limits (LCs))</b> estimated as a second and <b>most important</b> estimate to choose the <b>most suitable method</b> for final data interpretation and for if the Gaussian method is chosen also factor 'k'. <br>
-*<b>Tab: 'TE'</b>: !!! Only appears for the <b>reference material (e.g. Au)</b>!!!. <br>
-*<b>Tabs: 'Raw_Gaussian/Poisson'</b>: show the final <b>particle raw data above PDT</b> for each method.
-*<b>Tabs: 'Number_conc_Gaussian/Poisson'</b>: represent the <b>particle number concentration [nanoparticle (NP)/mL)] (including dilution factor) above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
+* <b>Tab: 'Baseline correction'</b>: In case of a <b>baseline drift</b> the baseline may have been corrected. The <b>ionic mode estimation (background)</b> gives you a <b>first estimation</b> if the <b>Gaussian or Poisson method</b> should be <b>chosen</b> to estimate the <b>Particle Detection Threshold (PDT)</b>. Lockwood et al. 2020 (SPCal) suggested to use the Poisson method for <b>low background elements <= 5 counts otherwise</b> the <b>iterative Gaussian method</b> may be chosen (e.g. for dwell times of 0.1 ms --> 50,000 counts per seconds). <br>
+* <b>Tabs: 'PDT_Gaussian/Posisson'</b>: show the <b>PDTs (and critical limits (LCs))</b> estimated as a second and <b>most important</b> estimate to choose the <b>most suitable method</b> for final data interpretation and for if the Gaussian method is chosen also factor 'k'. <br>
+* <b>Tab: 'TE'</b>: !!! Only appears for the <b>reference material (e.g. Au)</b>!!!. <br>
+* <b>Tabs: 'Raw_Gaussian/Poisson'</b>: show the final <b>particle raw data above PDT</b> for each method.
+* <b>Tabs: 'Number_conc_Gaussian/Poisson'</b>: represent the <b>particle number concentration [nanoparticle (NP)/mL)] (including dilution factor) above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
 <br>
-*<b>Tabs: 'Masses_Gaussian/Poisson'</b>: represent <b>all particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
-*<b>Tabs: 'Masses_Gaussian/Poisson_Peaks'</b>: represent <b>extracted particle masses above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
-*<b>Tabs: 'Masses_Summary_Gaussian/Poisson'</b>: show a <b>mean/average, median, SD, Mode of all particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. Peak 0-3 give you the <b>Gaussian peak-fitting</b> (this has nothing to do with the Gaussian method to estimate the PDT!) <b>average +/- SD (k = 1); the number of particle events</b> considered for this and the <b>particle number concentration under each extracted peak</b> (including the dilution factor). <br>
-*<b>Tabs: 'Masses_LOD_Gaussian/Poisson'</b>: represent the <b>limit of detections for particle masses</b> for each method. <br>
+* <b>Tabs: 'Masses_Gaussian/Poisson'</b>: represent <b>all particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
+* <b>Tabs: 'Masses_Gaussian/Poisson_Peaks'</b>: represent <b>extracted particle masses above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
+* <b>Tabs: 'Masses_Summary_Gaussian/Poisson'</b>: show a <b>mean/average, median, SD, Mode of all particle masses above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. Peak 0-3 give you the <b>Gaussian peak-fitting</b> (this has nothing to do with the Gaussian method to estimate the PDT!) <b>average +/- SD (k = 1); the number of particle events</b> considered for this and the <b>particle number concentration under each extracted peak</b> (including the dilution factor). <br>
+* <b>Tabs: 'Masses_LOD_Gaussian/Poisson'</b>: represent the <b>limit of detections for particle masses</b> for each method. <br>
 <br>
-*<b>Tabs: 'Sizes_Gaussian/Poisson'</b>: represent all <b>particle sizes above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
-*<b>Tabs: 'Sizes_Gaussian/Poisson_Peaks'</b>: represent <b>extracted particle sizes above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
-*<b>Tabs: 'Sizes_Summary_Gaussian/Poisson'</b>: show a <b>mean/average, median, SD, Mode of all particle sizes above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. Peak 0-3 give you the <b>Gaussian peak-fitting</b> (this has nothing to do with the Gaussian method to estimate the PDT!) <b>average +/- SD (k = 1); the number of particle events</b> considered for this and the <b>particle number concentration under each extracted peak</b> (including the dilution factor). <br>
-*<b>Tabs: 'Sizes_LOD_Gaussian/Poisson'</b>: represent the <b>limit of detections for particle sizes</b> for each method. <br>
+* <b>Tabs: 'Sizes_Gaussian/Poisson'</b>: represent all <b>particle sizes above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br>
+* <b>Tabs: 'Sizes_Gaussian/Poisson_Peaks'</b>: represent <b>extracted particle sizes above PDT (!!!Peak-fitting tool!!!)</b> for each method. In the graphs below, the Peaks can be monitored and connected to the peak captions for each method. If n(Peaks) < 4, the column is filled with a '0'.<br>
+* <b>Tabs: 'Sizes_Summary_Gaussian/Poisson'</b>: show a <b>mean/average, median, SD, Mode of all particle sizes above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. Peak 0-3 give you the <b>Gaussian peak-fitting</b> (this has nothing to do with the Gaussian method to estimate the PDT!) <b>average +/- SD (k = 1); the number of particle events</b> considered for this and the <b>particle number concentration under each extracted peak</b> (including the dilution factor). <br>
+* <b>Tabs: 'Sizes_LOD_Gaussian/Poisson'</b>: represent the <b>limit of detections for particle sizes</b> for each method. <br>
 <br>
 *<b>Tabs: 'Mass_conc_Gaussian/Poisson'</b>: represent the <b>mass concentrations (mg/L)</b> calculated as sum for all masses as well as using the masse average multiplicated with the event number for each method. <br>
 *<b>Tabs: 'Ionic_conc_Gaussian/Poisson'</b>: represent the <b>ionic concentration</b> which is calculated assuming that all data below PDT are dissolved/ionic signals. The <b>mode of all data < PDT </b> and the slope & intercept lead to the final <b>ionic concentration (µg/L)</b>, which does NOT include the dilution factor, for each method. <br>
