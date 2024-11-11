@@ -3,7 +3,7 @@
 
 # # Python post-processing algorithm - Agilent & Thermo - Au - Version 1.0 - Steffen Hellmann & Dr. Teba Gil-Díaz
 
-# In[1]:
+# In[46]:
 
 
 import pandas as pd
@@ -18,7 +18,8 @@ import scipy.stats as sps
 from scipy.signal import find_peaks, argrelextrema
 from math import log10, floor
 def round_sig(x, sig=2):
-    return round(x, sig-int(floor(log10(abs(x))))-1)
+    if math.isnan(x): return(math.nan) # Adaption LVO
+    else: return round(x, sig-int(floor(log10(abs(x))))-1)
 import warnings
 import matplotlib.pyplot as plt
 import numpy as np
@@ -39,7 +40,7 @@ import ast
 
 # # !!!Update sample information!!!
 
-# In[2]:
+# In[47]:
 
 
 #Data
@@ -58,7 +59,7 @@ f_d = 2.139 # Mass fraction e.g. M(SiO2)/M(Si) for Si as SiO2; for Au as Au = 1
 
 # # !!!Make sure only one '.csv' file is in the same folder as the code!!!
 
-# In[3]:
+# In[48]:
 
 
 # Read file and name the path as "file"
@@ -81,7 +82,7 @@ elif instrument == 'Thermo':  # Ensure instrument is a string
 table
 
 
-# In[4]:
+# In[49]:
 
 
 # Select all data which are >0
@@ -93,7 +94,7 @@ y = table_wZeros[list(table_wZeros.columns.values)[1]]
 
 # # Baseline correction & estimation of the ionic background via mode
 
-# In[5]:
+# In[50]:
 
 
 ########## Indentifying the baseline ##########
@@ -163,7 +164,7 @@ table=new_table_wZeros
 
 # # Iteration (40 times) or clear cut function to get particle detection thresholds (Gaussian)
 
-# In[6]:
+# In[51]:
 
 
 #Collecting TableX and iterating to obtain optimal PDT values
@@ -235,7 +236,7 @@ PDT7 = PDT_list[4][1]
 
 # # Calculation of background (average/mode) from the whole dataset below PDT (Gaussian)
 
-# In[7]:
+# In[52]:
 
 
 ###### Calculation of ionic background (average/mode) from the whole dataset < PDT = for Gaussian method
@@ -261,7 +262,7 @@ for i in sd_trials:
 
 # # Particle detection and critical thresholds (Poisson)
 
-# In[8]:
+# In[53]:
 
 
 ##### Critical value (LC) is the baseline from where the integration should start
@@ -295,7 +296,7 @@ for i in sd_trials[0:1]:
 
 # # Calculation of background (average/mode) from the whole dataset below PDT (Poisson)
 
-# In[9]:
+# In[54]:
 
 
 ###### Calculation of ionic background (average/mode) from the whole dataset < PDT = for Poisson method
@@ -308,7 +309,7 @@ for i in sd_trials[0:1]:
 
 # # Plot all data and show PDT to choose the best PDT (Gaussian)
 
-# In[10]:
+# In[55]:
 
 
 # For the zoom function
@@ -418,7 +419,7 @@ plt.savefig(new_name[0] + "_time_zoom_gaussian" + ".png", bbox_inches='tight', d
 
 # # Calculation of background (average/mode) from the whole dataset below PDT (Gaussian)
 
-# In[11]:
+# In[56]:
 
 
 ###### Calculation of ionic background (average/mode) from the whole dataset < PDT = for Gaussian method
@@ -444,7 +445,7 @@ for i in sd_trials:
 
 # # Plot all data and show PDT to choose the best PDT (Poisson)
 
-# In[12]:
+# In[57]:
 
 
 # Plot function
@@ -500,7 +501,7 @@ plt.savefig(new_name[0] + "_time_zoom_poisson" + ".png", bbox_inches='tight', dp
 
 # # Peak integration (Gaussian)
 
-# In[13]:
+# In[58]:
 
 
 ### Peak integration based on two approaches and PDT as background levels #### [with zeros]
@@ -572,7 +573,7 @@ for i in sd_trials:
 
 # # Peak integration (Poisson)
 
-# In[14]:
+# In[59]:
 
 
 ### Peak integration based on two approaches and PDT as background levels #### [with zeros]
@@ -664,7 +665,7 @@ for i in sd_trials[0:1]:
 
 # # Convert data from list into pandas dataframe & calculate ionic concentration (Gaussian)
 
-# In[15]:
+# In[60]:
 
 
 ### Ionic data from here
@@ -689,7 +690,7 @@ for p in range(len(dataframe_particle_ionic_mode_list)):
 
 # # Convert data from list into pandas dataframe & calculate ionic concentration (Poisson)
 
-# In[16]:
+# In[61]:
 
 
 ### Just for the plot to get the ionic data minus mean (background) which are lower than the corrected PDT
@@ -716,7 +717,7 @@ for p in range(1):
 
 # ###  !!! If needed: adapt factor i * SD !!!
 
-# In[17]:
+# In[62]:
 
 
 def outlier_discrimination(i,used_table):
@@ -743,7 +744,7 @@ for i in sd_trials:
 
 # ###  !!! If needed: adapt factor i * SD !!!
 
-# In[18]:
+# In[63]:
 
 
 def outlier_discrimination_poisson(i,used_table_poisson):
@@ -769,7 +770,7 @@ for i in sd_trials[0:1]:
 
 # ## Number of events (Gaussian)
 
-# In[19]:
+# In[64]:
 
 
 def PNC_calculator(i,valid_events,outlier_events):
@@ -797,7 +798,7 @@ for p in range(len(event_number_list)):
 
 # ## Number of events (Poisson)
 
-# In[20]:
+# In[65]:
 
 
 event_number_list_poisson = []
@@ -818,7 +819,7 @@ for p in range(len(event_number_list_poisson)):
 
 # ## Histograms (Gaussian)
 
-# In[21]:
+# In[66]:
 
 
 # Plot function
@@ -879,7 +880,7 @@ plt.savefig(new_name[0] + "_sums_zoom_gaussian" + ".png", bbox_inches='tight', d
 
 # ## Histograms (Poisson)
 
-# In[22]:
+# In[67]:
 
 
 # Plot function
@@ -931,7 +932,7 @@ plt.savefig(new_name[0] + "_sums_zoom_poisson" + ".png", bbox_inches='tight', dp
 
 # ## Mass calculation and standard deviations (Gaussian)
 
-# In[23]:
+# In[68]:
 
 
 def masses(i):
@@ -961,7 +962,7 @@ for i in sd_trials:
 
 # ## Mass calculation and standard deviations (Poisson)
 
-# In[24]:
+# In[69]:
 
 
 def masses_poisson(i):
@@ -988,7 +989,7 @@ for i in sd_trials[0:1]:
 
 # ## Calculation of mass and size detection limit (Gaussian)
 
-# In[25]:
+# In[70]:
 
 
 # Same way as spcal
@@ -997,6 +998,7 @@ def LOD(i):
     p = i-sd_trials[0]
     m_LOD = (corr_background[p]-intercept) * (response)**-1 * dwell * flow * te *10**6 # Important instead of the original PDT, here we took "corr_background[p]" the PDT-mean baseline (see peak integration)
     size_LOD = ((6 * m_LOD * f_d) / (math.pi * 10**15 * p_p))**(1/3) * 10**7
+    if isinstance(size_LOD,complex): size_LOD = math.nan #Adaption LVO
     return name, m_LOD, size_LOD
 
 LOD_list = []
@@ -1014,7 +1016,7 @@ for p in range(len(LOD_list)):
 
 # ## Calculation of mass and size detection limit (Poisson)
 
-# In[26]:
+# In[71]:
 
 
 def LOD_poisson(i):
@@ -1022,6 +1024,7 @@ def LOD_poisson(i):
     p = i-sd_trials[0]
     m_LOD = (corr_background_poisson[p]-intercept) * (response)**-1 * dwell * flow * te *10**6 # Important instead of the original PDT, here we took "corr_background_poisson[p]" the PDT-mean baseline (see peak integration)
     size_LOD = ((6 * m_LOD * f_d) / (math.pi * 10**15 * p_p))**(1/3) * 10**7
+    if isinstance(size_LOD,complex): size_LOD = math.nan #Adaption LVO
     return name, m_LOD, size_LOD
 
 LOD_list_poisson = []
@@ -1039,7 +1042,7 @@ for p in range(1):
 
 # ## Comparison of mass and size Background equivalent diameter via MassHunter from Agilent (Poisson)
 
-# In[27]:
+# In[72]:
 
 
 def LOD_MassHunter(i):
@@ -1066,7 +1069,7 @@ for p in range(1):
 
 # ## Peak fitting (Gaussian)
 
-# In[28]:
+# In[73]:
 
 
 def gaussians_1(x, a, x0, sigma):
@@ -1175,7 +1178,7 @@ def save_data(p, n, popt, x, y):
 # ### !!! line 19 "(max(h[1]))+"NUMBER"*(max(h[1]))(max(h[1]))+100*(max(h[1]))";
 # ### !!! line 21 "gaussians_"n"" 
 
-# In[29]:
+# In[74]:
 
 
 # Plot subplots for Nanoparticle Data
@@ -1207,7 +1210,7 @@ for p in sd_trials:
     for _ in range(n):
         plt.annotate('Mean of gaussian peak {}: %s'.format(_) %round(popt[n+_],2) + ' \u00B1 %s'%round(popt[2*n+_],2) + ' fg', xy=(0.22, 0.92-(_*0.1)),
                      xycoords='axes fraction', fontsize=12)
-    plt.annotate('LOD: %s' %round_sig(LOD_list[q][2],3) + ' fg', xy=(0.74, 0.85), xycoords='axes fraction', fontsize=12)
+    plt.annotate('LOD: %s' %round_sig(LOD_list[q][2],3) + ' fg', xy=(0.6, 0.525), xycoords='axes fraction', fontsize=12)
     #plt.legend(loc=[1.5,1.10], prop={'size':15})
     plt.grid(color= 'gray', alpha=0.05)
     plt.axvline(LOD_list[q][1], color='red', lw=2, ls='--', alpha=0.8)
@@ -1227,7 +1230,7 @@ plt.savefig(new_name[0] + "_mass_histograms_gaussian" + ".png", bbox_inches='tig
 # ### !!! line 19 "(max(h[1]))+"NUMBER"*(max(h[1]))(max(h[1]))+100*(max(h[1]))";
 # ### !!! line 21 "gaussians_"n"" 
 
-# In[30]:
+# In[75]:
 
 
 # Plot subplots for Nanoparticle Data
@@ -1257,7 +1260,7 @@ for p in sd_trials[0:1]:
     info_masses_peaks_poisson.append(storage[1])
     for _ in range(n):
         plt.annotate('Mean of poisson peak {}: %s'.format(_) %round(popt[n+_],2) + ' \u00B1 %s'%round(popt[2*n+_],2) + ' fg', xy=(0.27, 0.92-(_*0.1)), xycoords='axes fraction', fontsize=12)  
-    plt.annotate('LOD: %s' %round_sig(LOD_list_poisson[q][1],3) + ' fg', xy=(0.69, 0.85), xycoords='axes fraction', fontsize=12)
+    plt.annotate('LOD: %s' %round_sig(LOD_list_poisson[q][1],3) + ' fg', xy=(0.6, 0.525), xycoords='axes fraction', fontsize=12)
     #plt.legend(loc=[1.5,1.10], prop={'size':15})
     plt.grid(color= 'gray', alpha=0.05)
     plt.axvline(LOD_list_poisson[q][1], color='red', lw=2, ls='--', alpha=0.8)
@@ -1272,7 +1275,7 @@ plt.savefig(new_name[0] + "_mass_histograms_gaussian_poisson" + ".png", bbox_inc
 
 # ## Size calculations (Gaussian)
 
-# In[31]:
+# In[76]:
 
 
 def sizes(i):
@@ -1298,7 +1301,7 @@ for i in sd_trials:
 
 # ## Size calculations (Poisson)
 
-# In[32]:
+# In[77]:
 
 
 def sizes_poisson(i):
@@ -1328,7 +1331,7 @@ for i in sd_trials[0:1]:
 # ### !!! line 19 "(max(h[1]))+"NUMBER"*(max(h[1]))(max(h[1]))+100*(max(h[1]))";
 # ### !!! line 21 "gaussians_"n"" 
 
-# In[33]:
+# In[78]:
 
 
 # Plot subplots for Nanoparticle Data
@@ -1360,7 +1363,7 @@ for p in sd_trials:
     for _ in range(n):
         plt.annotate('Mean of gaussian peak {}: %s'.format(_) %round(popt[n+_],1) + ' \u00B1 %s'%round(popt[2*n+_],1) + ' nm', xy=(0.225, 0.92-(_*0.1)),
                      xycoords='axes fraction', fontsize=12)    
-    plt.annotate('LOD: %s' %round_sig(LOD_list[q][2],3) + ' nm', xy=(0.72, 0.85), xycoords='axes fraction', fontsize=12)
+    plt.annotate('LOD: %s' %round_sig(LOD_list[q][2],3) + ' nm', xy=(0.61, 0.525), xycoords='axes fraction', fontsize=12)
     #plt.legend(loc=[1.5,1.10], prop={'size':15})
     plt.grid(color= 'gray', alpha=0.05)
     plt.axvline(LOD_list[q][2], color='red', lw=2, ls='--', alpha=0.8)
@@ -1379,7 +1382,7 @@ plt.savefig(new_name[0] + "_size_histograms_gaussian" + ".png", bbox_inches='tig
 # ### !!! line 19 "(max(h[1]))+"NUMBER"*(max(h[1]))(max(h[1]))+100*(max(h[1]))";
 # ### !!! line 21 "gaussians_"n"" 
 
-# In[34]:
+# In[79]:
 
 
 # Plot subplots for Nanoparticle Data
@@ -1410,7 +1413,7 @@ for p in sd_trials[0:1]:
     
     for _ in range(n):
         plt.annotate('Mean of poisson peak {}: %s'.format(_) %round(popt[n+_],1) + ' \u00B1 %s'%round(popt[2*n+_],1) + ' nm', xy=(0.25, 0.92-(_*0.1)), xycoords='axes fraction', fontsize=12)
-    plt.annotate('LOD: %s' %round_sig(LOD_list_poisson[q][2],3) + ' nm', xy=(0.72, 0.85), xycoords='axes fraction', fontsize=12)
+    plt.annotate('LOD: %s' %round_sig(LOD_list_poisson[q][2],3) + ' nm', xy=(0.61, 0.525), xycoords='axes fraction', fontsize=12)
     #plt.legend(loc=[1.5,1.10], prop={'size':15})
     plt.grid(color= 'gray', alpha=0.05)
     plt.axvline(LOD_list_poisson[q][2], color='red', lw=2, ls='--', alpha=0.8)    
@@ -1423,12 +1426,13 @@ for p in sd_trials[0:1]:
 plt.savefig(new_name[0] + "_size_histograms_gaussian_poisson" + ".png", bbox_inches='tight', dpi=300)
 
 
+# # Particle mass concentrations
+
 # ## Gaussian
 
-# In[35]:
+# In[80]:
 
 
-# should be 45.02 ng/L (diluted); 45.02 mg/L total
 def mass_conc(i):
     p = i-sd_trials[0]
     name = 'mass_conc. µ+{}'.format(i)+'SD'
@@ -1449,10 +1453,9 @@ for p in range(len(mass_conc_list)):
 
 # ## Poisson
 
-# In[36]:
+# In[81]:
 
 
-# should be 45.02 ng/L (diluted); 45.02 mg/L total
 def mass_conc_poisson(i):
     p = i-sd_trials[0]
     name_poisson = 'mass_conc. µ+{}'.format(i)+'SD'
@@ -1475,7 +1478,7 @@ for p in range(1):
 
 # ### Gaussian
 
-# In[37]:
+# In[82]:
 
 
 ##Particle diameters => sizes_list[p][1]
@@ -1504,7 +1507,7 @@ for i in sd_trials:
 
 # ### Poisson
 
-# In[38]:
+# In[83]:
 
 
 ##Particle diameters => sizes_list[p][1]
@@ -1533,7 +1536,7 @@ for i in sd_trials[0:1]:
 
 # ## Save data into Excel file
 
-# In[40]:
+# In[84]:
 
 
 # Change figure size
