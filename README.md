@@ -44,7 +44,7 @@
 
 ## 4) Excel output file
 * <b>Tab: 'Baseline correction'</b>: In case of a <b>baseline drift</b> the baseline may have been corrected. The <b>ionic mode estimation (background)</b> gives you a <b>first estimation</b> if the <b>Gaussian or Poisson method</b> should be <b>chosen</b> to estimate the <b>Particle Detection Threshold (PDT)</b>. Lockwood et al. 2020 (SPCal) suggested to use the Poisson method for <b>low background elements <= 5 counts otherwise</b> the <b>iterative Gaussian method</b> may be chosen (e.g. for dwell times of 0.1 ms --> 50,000 counts per seconds). <br>
-* <b>Tabs: 'PDT_Gaussian/Posisson'</b>: show the <b>PDTs (and critical limits (LCs))</b> estimated as a second and <b>most important</b> estimate to choose the <b>most suitable method</b> for final data interpretation and for if the Gaussian method is chosen also factor 'k'. <br>
+* <b>Tabs: 'PDT_Gaussian/Posisson'</b>: show the <b>PDTs (and critical values (LCs))</b> estimated as a second and <b>most important</b> estimate to choose the <b>most suitable method</b> for final data interpretation and for if the Gaussian method is chosen also factor 'k'. <br>
 * <b>Tab: 'TE'</b>: !!! Only appears for the <b>reference material (e.g. Au)</b>!!!. <br>
 * <b>Tabs: 'Raw_Gaussian/Poisson'</b>: show the final <b>particle raw data above PDT</b> for each method.
 * <b>Tabs: 'Number_conc_Gaussian/Poisson'</b>: represent the <b>particle number concentration [nanoparticle (NP)/mL)] (including dilution factor) above PDT (!!!NO Peak-fitting tool!!!)</b> for each method. <br><br>
