@@ -18,7 +18,7 @@ import scipy.stats as sps
 from scipy.signal import find_peaks, argrelextrema
 from math import log10, floor
 def round_sig(x, sig=2):
-    if math.isnan(x): return(math.nan) # Adaption LVO
+    if math.isnan(x): return(math.nan)
     else: return round(x, sig-int(floor(log10(abs(x))))-1)
 import warnings
 import matplotlib.pyplot as plt
@@ -67,7 +67,7 @@ file = glob.glob('*.csv')
 new_file = file[0]
 # Get File name of Excel file, replace ".xlsx" and save name
 new_name = [s.replace('.csv', '') for s in file] # remove '.csv'
-table = pd.read_csv(new_file) # Original table
+table = pd.read_csv(new_file, encoding='ISO-8859-1') # Original table
 
 if instrument == 'Agilent':  # Ensure instrument is a string
     skip = len(table)  # last
@@ -259,7 +259,7 @@ for i in sd_trials:
 #mean_mode_ionic_cps_list["0=µ+3SD;1=µ+4SD; ...; 4=µ+7SD"][0=name;1=mean;2=mode]  ;  e.g. for mode µ + 3SD --> mean_mode_ionic_cps_list[0][2]
 
 
-# # Particle detection and critical thresholds (Poisson)
+# # Particle detection threshold and critical value (Poisson)
 
 # In[93]:
 
@@ -996,7 +996,7 @@ def LOD(i):
     p = i-sd_trials[0]
     m_LOD = (corr_background[p]-intercept) * (response)**-1 * dwell * flow * te *10**6 # Important instead of the original PDT, here we took "corr_background[p]" the PDT-mean baseline (see peak integration)
     size_LOD = ((6 * m_LOD * f_d) / (math.pi * 10**15 * p_p))**(1/3) * 10**7
-    if isinstance(size_LOD,complex): size_LOD = math.nan #Adaption LVO
+    if isinstance(size_LOD,complex): size_LOD = math.nan
     return name, m_LOD, size_LOD
 
 LOD_list = []
@@ -1022,7 +1022,7 @@ def LOD_poisson(i):
     p = i-sd_trials[0]
     m_LOD = (corr_background_poisson[p]-intercept) * (response)**-1 * dwell * flow * te *10**6 # Important instead of the original PDT, here we took "corr_background_poisson[p]" the PDT-mean baseline (see peak integration)
     size_LOD = ((6 * m_LOD * f_d) / (math.pi * 10**15 * p_p))**(1/3) * 10**7
-    if isinstance(size_LOD,complex): size_LOD = math.nan #Adaption LVO
+    if isinstance(size_LOD,complex): size_LOD = math.nan
     return name, m_LOD, size_LOD
 
 LOD_list_poisson = []
