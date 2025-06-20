@@ -1,4 +1,4 @@
-# Python-algorithm-sp/scICP-MS
+# Sparta - Single Particle Analysis & Reliable Tracking Algorithm
 <b>Suitability</b>: Python post-processing algorithm for single particle / single cell ICP-MS (<b>quadrupole based</b>) suitable for <b>Thermo and Agilent.</b>
 <b>Note:</b> The code might be also <b>suitable</b> for <b>other ICP-MS manufacturers</b> if the output is provided as .csv (e.g from Perkin Elmer/Analytik Jena) but the input notebook must be adjusted to the format needed.
 
