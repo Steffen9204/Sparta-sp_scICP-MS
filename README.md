@@ -20,7 +20,7 @@
 * Use the reference material code (example Au) to calculate the transport efficiencies (TE) and/or interpret e.g. Au particle data. <br>
 * Suggested to measure at least three reference material technical replicates for the transport efficiency and take the average of the TE results. <br>
 * <b>In the code</b>: Always when you find <b>Markups with '!!!' ---> User action is required</b> (e.g. second 'notebook'; beginning of the code: all data of the measurement have to be inserted under '# !!!Update sample information!!!'). <br>
-* From version 1.1 upwards:
+* <b>From version 1.1 upwards:</b>
   * The instrument (e.g. Thermo or Agilent has to be selected)
   * Alpha beta errors are included.
     *  <b> 'Alpha/Beta errors added for the Gaussian peak-fitting/detection method </b>
@@ -33,8 +33,8 @@
   * <b>Clear_Cut' function now disabled by default </b>
     * Clear_Cut Function to overwrite the iterative Gaussian Particle Detection Throshold, can be enabled at the beginning if using a monodisperse particle sample and the
   (ionic) background is clearly separated from the particle distribution. In this case, it removes potential background artefacts potentiall detected by the statistical    Gaussian method. Often useful for low-background elements such a Au.
-    * <b> 'Outlier removal' function now disabled by default </b>
-      * For well-characterized particles such as certified reference materials, which have monodisperse distributions, the ‘Outlier removal’ function can be enabled to
+  * <b> 'Outlier removal' function now disabled by default </b>
+    * For well-characterized particles such as certified reference materials, which have monodisperse distributions, the ‘Outlier removal’ function can be enabled to
   exclude large agglomerates or other artefacts. We suggest to leave this function disabled for unknown or natural samples, as detected agglomerates may in fact 
   represent large particles.
 * The <b>intercept and slope (response)</b> is usually taken from a <b>linear ionic calibration</b> (e.g. done with Microsoft Excel or Origin Lab etc.). <br>
@@ -44,7 +44,7 @@
 * To decide which <b>method</b> and <b>factor 'k'</b> should be chosen to estimate the transport efficiency, the <b>graphs</b> 'Plot all data and show PDT to choose the best PDT (Gaussian)' & '# Plot all data and show PDT to choose the best PDT (Poisson)' might help. Usually the <b>Gaussian method between µ+4-7SD is taken (!!!to estimate the transport efficiency!!!) in combination with the Particle number method</b> but might vary depending on your particle material used. <br>
 * If <b>dwell times < 2 ms</b> are used, a <b>peak integration</b> is applied for both methods to combine multiple detections within one particle event.
 * The ionic concentration, which is calculated assuming that all data below PDT are dissolved/ionic signals is calculated. The <b>mode of all data < PDT </b> and the slope & intercept lead to the final <b>ionic concentration (µg/L)</b>, which does NOT include the dilution factor, for each method. <br>
-* In the Notebooks <b>'Remove outliers [>µ+kSD from all particles] (high signals e.g. agglomerates) (Gaussian/Poisson)'</b> the <b>factor 'i'</b> might be <b>adapted</b> from default '3' to any higher number to become less sensitive and detect less outliers (in case your particles are detected as outliers, sometimes the case for high background elements (e.g. Si)' This can be monitored in the histogram graphs below. <br>
+* If enabled: In the Notebooks <b>'Remove outliers [>µ+kSD from all particles] (high signals e.g. agglomerates) (Gaussian/Poisson)'</b> the <b>factor 'i'</b> might be <b>adapted</b> from default '3' to any higher number to become less sensitive and detect less outliers (in case your particles are detected as outliers, sometimes the case for high background elements (e.g. Si)' This can be monitored in the histogram graphs below. <br>
 * The <b>Particle Number Concentration (PNC)</b> shown here is calculated from <b>all events above PDT</b>. <br>
 * The below <b>histograms give an overview about background, particles (used for the following calculations) and outliers</b>; Adapt the above factor 'i' if you think that your particle populations are marked as outliers. <br>
 * The <b>transport (nebulisation) efficiency</b> is calculated via particle number and particle size method and saved in the final Excel output for all cases. As explained above, take the <b>most suiting method</b> for your materials and calculate an <b>average</b> of e.g. three replicates (always the same method). <br>
