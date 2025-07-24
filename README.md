@@ -17,9 +17,26 @@
 ## 3) Operate the code (e.g. calculation of transport efficiencies)
 
 ### 3.1) Reference material code (example Au)
-* Use the reference material code (example Au) to calculate the transport efficiencies (TE) and/or interpret Au particle data. <br>
-* Suggested to measure three reference material technical replicates for the transport efficiency and take the average of the TE results. <br>
-* <b>In the code</b>: Always when you find <b>Markups with '!!!' ---> User action is required</b> (e.g. second 'notebook': all data of the measurement have to be inserted). <br>
+* Use the reference material code (example Au) to calculate the transport efficiencies (TE) and/or interpret e.g. Au particle data. <br>
+* Suggested to measure at least three reference material technical replicates for the transport efficiency and take the average of the TE results. <br>
+* <b>In the code</b>: Always when you find <b>Markups with '!!!' ---> User action is required</b> (e.g. second 'notebook'; beginning of the code: all data of the measurement have to be inserted under '# !!!Update sample information!!!'). <br>
+* From version 1.1 upwards:
+  * The instrument (e.g. Thermo or Agilent has to be selected)
+  * Alpha beta errors are included.
+    *  <b> 'Alpha/Beta errors added for the Gaussian peak-fitting/detection method </b>
+      * Sparta uses a flexible multi-modal Gaussian peak-fitting algorithm that can model up to four peaks, representing either particle distributions or background signals 
+  (details, see README file). The algorithm includes both alpha (α) and beta (β) error calculations:
+        * α error defines the confidence interval of the peak height and width (set to '0.05' by default).
+        * β error reflects the probability of missing a true peak (Type II error), evaluated via a statistical t-test, returning the test's power (1–β).
+      * Therefore, by default, the fitting uses a 95% confidence level (modifiable via the 'alpha_error' parameter). Peaks are statistically evaluated to determine which are 
+  significant and therefore considered as 'real' peaks.
+  * <b>Clear_Cut' function now disabled by default </b>
+    * Clear_Cut Function to overwrite the iterative Gaussian Particle Detection Throshold, can be enabled at the beginning if using a monodisperse particle sample and the
+  (ionic) background is clearly separated from the particle distribution. In this case, it removes potential background artefacts potentiall detected by the statistical    Gaussian method. Often useful for low-background elements such a Au.
+    * <b> 'Outlier removal' function now disabled by default </b>
+      * For well-characterized particles such as certified reference materials, which have monodisperse distributions, the ‘Outlier removal’ function can be enabled to
+  exclude large agglomerates or other artefacts. We suggest to leave this function disabled for unknown or natural samples, as detected agglomerates may in fact 
+  represent large particles.
 * The <b>intercept and slope (response)</b> is usually taken from a <b>linear ionic calibration</b> (e.g. done with Microsoft Excel or Origin Lab etc.). <br>
 * <b>'te'</b> (transport efficiency) here can be for now <b>roughly estimated</b> (as absolute value; NOT as '%') and then <b>updated</b> after the result is there from e.g. three replicates in the code for analyte interpretation (and this code if aiming to investigate Au particles). <br>
 * <b>Run the whole code</b>. In case an <b>error</b> occurs, <b>adapt the user interaction fields</b> marked with '!!!'.<br>
