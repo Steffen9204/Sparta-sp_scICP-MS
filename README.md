@@ -31,7 +31,7 @@
       * Therefore, by default, the fitting uses a 95% confidence level (modifiable via the 'alpha_error' parameter). Peaks are statistically evaluated to determine which are 
   significant and therefore considered as 'real' peaks.
   * <b>Clear_Cut' function now disabled by default </b>
-    * Clear_Cut Function to overwrite the iterative Gaussian Particle Detection Throshold, can be enabled at the beginning if using a monodisperse particle sample and the
+    * Clear_Cut Function to overwrite the iterative Gaussian Particle Detection Threshold (PDT), can be enabled at the beginning if using a monodisperse particle sample and the
   (ionic) background is clearly separated from the particle distribution. In this case, it removes potential background artefacts potentiall detected by the statistical    Gaussian method. Often useful for low-background elements such a Au.
   * <b> 'Outlier removal' function now disabled by default </b>
     * For well-characterized particles such as certified reference materials, which have monodisperse distributions, the ‘Outlier removal’ function can be enabled to
