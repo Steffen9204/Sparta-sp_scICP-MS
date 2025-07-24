@@ -8,7 +8,7 @@
 * The Python algorithm is created using <b>Anaconda Navigator (2.6.0); </b> and JupiterLab (2.2.6) [usually more recent versions also works]. We suggest to download this software. Otherwise a python script is also available (.py) but is not tested from our site.<br>
 * The <b>anaconda environment</b> is provided in the main path (!!!this should be used and activated!!!) <b>('2024_10_base_clone.yaml')</b> and can be integrated in anaconda navigator: Environments --> Import --> Choose File<br>
 * After that, it can be chosen as default: File --> Preferences --> Default conda environment --> choose environment. <br>
-* Now install the right <b>JupyterLab Version (2.2.6) [usually a more recent version also works]</b> and 'Launch'.<br>
+* Now install the right <b>JupyterLab Version (2.2.6)</b> [usually a more recent version also works] and 'Launch'.<br>
 
 ## 2) Create Folders and insert files
 * Create for each sample one folder --> Add <b>ONE csv. file (raw data of the measurement) </b> and the <b>code file </b> (!IMPORTANT: Make sure only one .csv is in the same folder with the code file!). <br>
