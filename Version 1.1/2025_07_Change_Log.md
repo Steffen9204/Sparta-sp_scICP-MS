@@ -25,5 +25,13 @@
   X events and Y particles/mL.
 
 <b> 5) Instrument-specific code files merged (Agilent vs. Thermo) </b>
+* Only one code file independent from the instrument used (version 1.0 had instrument-specific code files).
 * In the second notebook (beginning of the code), the instrument can be sepcified for the correct output: "instrument = 'Agilent' # Either 'Agilent' or 'Thermo'".
-* It is possible to adapt this for other output forms such as from Perkin Elmer or similar instruments.
+* It is possible to adapt this part in the code for other output forms such as from Perkin Elmer or similar instruments.
+
+<b> 6) Poisson transport efficiency (TE) now exported to the 'Output Excel file' </b>
+* If using the TE code file: TE Output can be found in the Excel Tab ' TE_Poisson'.
+
+<b> 7) Limit of detetcion (LOD) [MassHunter] was corrected to Background equivalent mass/diameter [MassHunter] in the code files' </b>
+* Background Equivalent Mass [MassHunter] [fg/event].
+* Background Equivalent Diameter [MassHunter]  [nm].
