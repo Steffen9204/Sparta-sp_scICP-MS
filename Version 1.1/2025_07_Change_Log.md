@@ -1,6 +1,6 @@
 # 2025_07_Change_Log
 <b> 1) 'Clear_Cut' function now disabled by default </b>
-* Clear_Cut Function to overwrite the iterative Gaussian Particle Detection Throshold, can be enabled at the beginning if using a monodisperse particle sample and the
+* Clear_Cut Function to overwrite the iterative Gaussian Particle Detection Threshold (PDT), can be enabled at the beginning if using a monodisperse particle sample and the
   (ionic) background is clearly separated from the particle distribution. In this case, it removes potential background artefacts potentiall detected by the statistical    Gaussian method. Often useful for low-background elements such a Au.
 
 <b> 2) 'Outlier removal' function now disabled by default </b>
@@ -21,8 +21,8 @@
 * Therefore, by default, the fitting uses a 95% confidence level (modifiable via the 'alpha_error' parameter). Peaks are statistically evaluated to determine which are 
   significant and therefore considered as 'real' peaks.
 * In the graphs and Excel output, 'bold' marked peaks are within the 95% confidence interval, all other 'not bold' marked peaks are outside this statistical interval.
-* Excel output: Tab(s): 'Masses/Sizes_Summary_Gaussian/Poisson' represents e.g. peak 0 of 3SD: Average[+/- α error] +/- SD [+/- α error] fg/nm with power: 1-β for 
-  X events and Y particles/mL.
+* Excel output: Tab(s): 'Masses/Sizes_Summary_Gaussian/Poisson' represents e.g. peak 0 of 3SD: Average[+/- α error] +/- SD (k = 1) [+/- α error] fg/nm with power: 1-β 
+  for X events and Y particles/mL.
 
 <b> 5) Instrument-specific code files merged (Agilent vs. Thermo) </b>
 * Only one code file independent from the instrument used (version 1.0 had instrument-specific code files).
