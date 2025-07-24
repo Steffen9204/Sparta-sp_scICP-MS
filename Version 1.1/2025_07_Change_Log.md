@@ -22,4 +22,8 @@
   significant and therefore considered as 'real' peaks.
 * In the graphs and Excel output, 'bold' marked peaks are within the 95% confidence interval, all other 'not bold' marked peaks are outside this statistical interval.
 * Excel output: Tab(s): 'Masses/Sizes_Summary_Gaussian/Poisson' represents e.g. peak 0 of 3SD: Average[+/- α error] +/- SD [+/- α error] fg/nm with power: 1-β for 
-  X events and Y particles/mL
+  X events and Y particles/mL.
+
+<b> 5) Instrument-specific code files merged (Agilent vs. Thermo) </b>
+* In the second notebook (beginning of the code), the instrument can be sepcified for the correct output: "instrument = 'Agilent' # Either 'Agilent' or 'Thermo'".
+* It is possible to adapt this for other output forms such as from Perkin Elmer or similar instruments.
