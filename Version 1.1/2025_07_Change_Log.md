@@ -15,8 +15,11 @@
 
  <b> 4) 'Alpha/Beta errors added for the Gaussian peak-fitting/detection method </b>
 * Sparta uses a flexible multi-modal Gaussian peak-fitting algorithm that can model up to four peaks, representing either particle distributions or background signals 
-  (details, see README file).The algorithm incorporates both alpha (α) and beta (β) error calculations:
-  * α error defines the confidence interval of the peak height and width.
+  (details, see README file). The algorithm includes both alpha (α) and beta (β) error calculations:
+  * α error defines the confidence interval of the peak height and width (set to '0.05' by default).
   * β error reflects the probability of missing a true peak (Type II error), evaluated via a statistical t-test, returning the test's power (1–β).
-* By default, the fitting uses a 95% confidence level (modifiable via the 'alpha_error' parameter). Peaks are statistically evaluated to determine which are significant 
-  and are 'true'.
+* Therefore, by default, the fitting uses a 95% confidence level (modifiable via the 'alpha_error' parameter). Peaks are statistically evaluated to determine which are 
+  significant and therefore considered as 'real' peaks.
+* In the graphs and Excel output, 'bold' marked peaks are within the 95% confidence interval, all other 'not bold' marked peaks are outside this statistical interval.
+* Excel output: Tab(s): 'Masses/Sizes_Summary_Gaussian/Poisson' represents e.g. peak 0 of 3SD: Average[+/- α error] +/- SD [+/- α error] fg/nm with power: 1-β for 
+  X events and Y particles/mL
