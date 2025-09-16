@@ -1,4 +1,4 @@
-# 2025_07_Change_Log
+# 2025_07_Change_Log_Sparta_1.1
 <b> 1) 'Clear_Cut' function now disabled by default </b>
 * Clear_Cut Function to overwrite the iterative Gaussian Particle Detection Threshold (PDT), can be enabled at the beginning if using a monodisperse particle sample and the
   (ionic) background is clearly separated from the particle distribution. In this case, it removes potential background artefacts potentiall detected by the statistical    Gaussian method. Often useful for low-background elements such a Au.
