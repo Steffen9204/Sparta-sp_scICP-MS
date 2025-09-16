@@ -32,6 +32,6 @@
 <b> 6) Poisson transport efficiency (TE) now exported to the 'Output Excel file' </b>
 * If using the TE code file: TE Output can be found in the Excel Tab ' TE_Poisson'.
 
-<b> 7) Limit of detetcion (LOD) [MassHunter] was corrected to Background equivalent mass/diameter [MassHunter] in the code files' </b>
+<b> 7) Limit of detection (LOD) [MassHunter] was corrected to Background equivalent mass/diameter [MassHunter] in the code files' </b>
 * Background Equivalent Mass [MassHunter] [fg/event].
 * Background Equivalent Diameter [MassHunter]  [nm].
